@@ -66,11 +66,27 @@ function calculator() {
 // FUNZIONE RESET
 function reset() {
 
-    // RIMUOVI LA POSIZIONE NUMERICA DEL COGNOME UTENTE NELLA LISTA COGNOMI
-    var surnamePositionP = document.getElementById("user_surname_position");
-    surnamePositionP.innerHTML = "";
+    if (!doubleClick) {
 
-    // SBLOCCA IL DOPPIO CLICK DEL PULSANTE
-    doubleClick = true;
+        // LISTA COGNOMI
+        surnamesList = ["Rossi", "Ferrari", "Russo", "Bianchi", "Gallo", "Costa", "Fontana", "Conti", "Esposito", "Ricci", "De Luca", "Greco", "Barbieri", "Conte", "Marini", "Gatti", "Caruso"];
+
+        // STAMPA LISTA COGNOMI IN ORDINE ALFABETICO
+        surnamesList.sort();
+
+        var surnamesListOl = document.getElementById("surnames_list");
+        surnamesListOl.innerHTML= "";
+        for (var i = 0 ; i < surnamesList.length ; i++) {
+            surnamesListOl.innerHTML += "<li>" + surnamesList[i] + "</li>";
+        }
+
+        // RIMUOVI LA POSIZIONE NUMERICA DEL COGNOME UTENTE NELLA LISTA COGNOMI
+        var surnamePositionP = document.getElementById("user_surname_position");
+        surnamePositionP.innerHTML = "";
+
+        // SBLOCCA IL DOPPIO CLICK DEL PULSANTE
+        doubleClick = true;
+
+    }
 
 }
