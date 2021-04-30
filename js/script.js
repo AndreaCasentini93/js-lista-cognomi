@@ -84,6 +84,10 @@ function reset() {
         var surnamePositionP = document.getElementById("user_surname_position");
         surnamePositionP.innerHTML = "";
 
+        // PULISCI L'INPUT TEXT
+        var userSurnameInput = document.getElementById("user_surname");
+        userSurnameInput.value = "";
+
         // SBLOCCA IL DOPPIO CLICK DEL PULSANTE
         doubleClick = true;
 
