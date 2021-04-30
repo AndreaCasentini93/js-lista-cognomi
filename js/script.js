@@ -1,36 +1,66 @@
-// USER SURNAME REQUEST
-var userSurname = prompt("Write your surname, please.");
-var userSurname = userSurname[0].toUpperCase() + userSurname.substring(1);
-
-// USER SURNAME IN [SURNAMES LIST] ARRAY
+// LISTA COGNOMI
 var surnamesList = ["Rossi", "Ferrari", "Russo", "Bianchi", "Gallo", "Costa", "Fontana", "Conti", "Esposito", "Ricci", "De Luca", "Greco", "Barbieri", "Conte", "Marini", "Gatti", "Caruso"];
 
-surnamesList.push(userSurname);
-
-// PRINT OF THE ORDERED [SURNAMES LIST]
+// STAMPA LISTA COGNOMI IN ORDINE ALFABETICO
 surnamesList.sort();
 
 var surnamesListOl = document.getElementById("surnames_list");
 
 for (var i=0 ; i < surnamesList.length ; i++) {
-    surnamesListOl.innerHTML += "<li> " + surnamesList[i] + "</li>";
+    surnamesListOl.innerHTML += "<li>" + surnamesList[i] + "</li>";
 }
 
-// USER'S SURNAME POSITION IN THE [SURNAMES LIST]
-var surnamePositionP = document.getElementById("user_surname_position");
-var surnamePosition = 1;
+// FUNZIONE CALCOLATORE
+var doubleClick = true;
 
-var test = true;
+function calculator() {
 
-i = 0
-while ((i < surnamesList.length) && (test)) {
-    
-    if (userSurname == surnamesList[i]) {
-        surnamePosition += i;
-        test = false;
+    if (doubleClick) {
+
+        // RESET DELLA LISTA COGNOMI
+        surnamesListOl.innerHTML = "";
+
+        // CHIEDI ALL'UTENTE IL SUO COGNOME
+        var userSurnameInput = document.getElementById("user_surname");
+
+        var userSurname = userSurnameInput.value;
+        var userSurname = userSurname[0].toUpperCase() + userSurname.substring(1);
+
+        // INSERISCI IL COGNOME DELL'UTENTE NELLA LISTA
+        surnamesList.push(userSurname);
+
+        // STAMPA LA LISTA IN ORDINE ALFABETICO
+        surnamesList.sort();
+
+        for (var i=0 ; i < surnamesList.length ; i++) {
+            surnamesListOl.innerHTML += "<li>" + surnamesList[i] + "</li>";
+        }
+
+        // SPECIFICA LA POSIZIONE NUMERICA DEL COGNOME UTENTE NELLA LISTA
+        var surnamePositionP = document.getElementById("user_surname_position");
+        var surnamePosition = 1;
+
+        var test = true;
+
+        i = 0
+        while ((i < surnamesList.length) && (test)) {
+            
+            if (userSurname == surnamesList[i]) {
+                surnamePosition += i;
+                test = false;
+            }
+
+            i++;
+        }
+
+        surnamePositionP.innerHTML = "Your surname has position number " + surnamePosition + " in the surnames list.";
+
+        // PULISCI L'INPUT TEXT
+        userSurnameInput.value = "";
+
+        // BLOCCA IL DOPPIO CLICK DEL PULSANTE
+        doubleClick = false;
+
     }
 
-    i++;
 }
-
-surnamePositionP.innerHTML = "Your surname has position number " + surnamePosition + " in the surnames list";
