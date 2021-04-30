@@ -14,48 +14,64 @@ var doubleClick = true;
 
 function calculator() {
 
-    // RESET DELLA LISTA COGNOMI
-    surnamesListOl.innerHTML = "";
-
     // CHIEDI ALL'UTENTE IL SUO COGNOME
     var userSurnameInput = document.getElementById("user_surname");
     var userSurname = userSurnameInput.value;
-    var userSurname = userSurname[0].toUpperCase() + userSurname.substring(1);
 
-    // INSERISCI IL COGNOME DELL'UTENTE NELLA LISTA
-    surnamesList.push(userSurname);
+    // CALCOLATORE FUNZIONA SOLO SE IL COGNOME UTENTE E' COMPOSTO DA LETTERE
+    if(!(userSurname.trim() == "" || !isNaN(parseInt(userSurname)) && typeof parseInt(userSurname) == 'number')) {
 
-    // STAMPA LA LISTA IN ORDINE ALFABETICO
-    surnamesList.sort();
+        // RESET DELLA LISTA COGNOMI
+        surnamesListOl.innerHTML = "";
 
-    for (var i=0 ; i < surnamesList.length ; i++) {
-        surnamesListOl.innerHTML += "<li>" + surnamesList[i] + "</li>";
-    }
+        // TRASFORMA IN MAIUSCOLA LA PRIMA LETTERA DEL COGNOME UTENTE
+        var userSurname = userSurname[0].toUpperCase() + userSurname.substring(1);
 
-    // SPECIFICA LA POSIZIONE NUMERICA DEL COGNOME UTENTE NELLA LISTA
-    var surnamePosition = 1;
+        // INSERISCI IL COGNOME DELL'UTENTE NELLA LISTA
+        surnamesList.push(userSurname);
 
-    var test = true;
+        // STAMPA LA LISTA IN ORDINE ALFABETICO
+        surnamesList.sort();
 
-    i = 0
-    while ((i < surnamesList.length) && (test)) {
-        
-        if (userSurname == surnamesList[i]) {
-            surnamePosition += i;
-            test = false;
+        for (var i=0 ; i < surnamesList.length ; i++) {
+            surnamesListOl.innerHTML += "<li>" + surnamesList[i] + "</li>";
         }
 
-        i++;
+        // SPECIFICA LA POSIZIONE NUMERICA DEL COGNOME UTENTE NELLA LISTA
+        var surnamePosition = 1;
+
+        var test = true;
+
+        i = 0
+        while ((i < surnamesList.length) && (test)) {
+            
+            if (userSurname == surnamesList[i]) {
+                surnamePosition += i;
+                test = false;
+            }
+
+            i++;
+        }
+
+        var surnamePositionP = document.getElementById("user_surname_position");
+        surnamePositionP.innerHTML = "Your surname has position number " + surnamePosition + " in the surnames list.";
+        
+        // PULISCI L'INPUT TEXT
+        userSurnameInput.value = "";
+
+        // BLOCCA IL DOPPIO CLICK DEL PULSANTE
+        doubleClick = false;
+
+    } else {
+
+        // MESSAGGIO DI ERRORE
+        var surnamePositionP = document.getElementById("user_surname_position");
+        surnamePositionP.innerHTML = "The last name entered is not valid, please try again."
+
+        // PULISCI L'INPUT TEXT
+        userSurnameInput.value = "";
+
     }
-
-    var surnamePositionP = document.getElementById("user_surname_position");
-    surnamePositionP.innerHTML = "Your surname has position number " + surnamePosition + " in the surnames list.";
-
-    // PULISCI L'INPUT TEXT
-    userSurnameInput.value = "";
-
-    // BLOCCA IL DOPPIO CLICK DEL PULSANTE
-    doubleClick = false;
 
 }
 
