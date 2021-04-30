@@ -1,3 +1,4 @@
+/* COMMONS */
 * {
     box-sizing: border-box;
     padding: 0;
@@ -14,8 +15,6 @@ main {
     justify-content: space-around;
     width: 100%;
     min-height: 100vh;
-    padding: 50px;
-    background-image: linear-gradient(#59d6ff, #ffffff,#59d6ff);
 }
 
 section {
@@ -81,3 +80,22 @@ section {
 }
 
 /* SECTION RIGHT */
+#section_right h1 {
+    text-transform: uppercase;
+    font-size: 40px;
+    color: limegreen;
+}
+
+#section_right ol {
+    padding: 10px 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: inset 0px 0px 10px #004a63;
+}
+#section_right li {
+    padding: 5px;
+    border-bottom: 2px solid #00bfff77;
+}
+#section_right li:last-child {
+    border-bottom: unset;
+}
