@@ -1,10 +1,15 @@
+// VARIABILI GET ELEMENT BY ID
+var userSurnameInput = document.getElementById("user_surname");
+var surnamePositionP = document.getElementById("user_surname_position");
+var surnamesListOl = document.getElementById("surnames_list");
+
+
 // LISTA COGNOMI
 var surnamesList = ["Rossi", "Ferrari", "Russo", "Bianchi", "Gallo", "Costa", "Fontana", "Conti", "Esposito", "Ricci", "De Luca", "Greco", "Barbieri", "Conte", "Marini", "Gatti", "Caruso"];
 
 // STAMPA LISTA COGNOMI IN ORDINE ALFABETICO
 surnamesList.sort();
 
-var surnamesListOl = document.getElementById("surnames_list");
 for (var i = 0 ; i < surnamesList.length ; i++) {
     surnamesListOl.innerHTML += "<li>" + surnamesList[i] + "</li>";
 }
@@ -15,7 +20,6 @@ var doubleClick = true;
 function calculator() {
 
     // CHIEDI ALL'UTENTE IL SUO COGNOME
-    var userSurnameInput = document.getElementById("user_surname");
     var userSurname = userSurnameInput.value;
 
     // CALCOLATORE FUNZIONA SOLO SE IL COGNOME UTENTE E' COMPOSTO DA LETTERE
@@ -53,7 +57,6 @@ function calculator() {
             i++;
         }
 
-        var surnamePositionP = document.getElementById("user_surname_position");
         surnamePositionP.innerHTML = "Your surname has position number " + surnamePosition + " in the surnames list.";
         
         // PULISCI L'INPUT TEXT
@@ -65,11 +68,13 @@ function calculator() {
     } else {
 
         // MESSAGGIO DI ERRORE
-        var surnamePositionP = document.getElementById("user_surname_position");
         surnamePositionP.innerHTML = "The last name entered is not valid, please try again."
 
         // PULISCI L'INPUT TEXT
         userSurnameInput.value = "";
+
+        // BLOCCA IL DOPPIO CLICK DEL PULSANTE
+        doubleClick = false;
 
     }
 
@@ -86,18 +91,15 @@ function reset() {
         // STAMPA LISTA COGNOMI IN ORDINE ALFABETICO
         surnamesList.sort();
 
-        var surnamesListOl = document.getElementById("surnames_list");
         surnamesListOl.innerHTML= "";
         for (var i = 0 ; i < surnamesList.length ; i++) {
             surnamesListOl.innerHTML += "<li>" + surnamesList[i] + "</li>";
         }
 
         // RIMUOVI LA POSIZIONE NUMERICA DEL COGNOME UTENTE NELLA LISTA
-        var surnamePositionP = document.getElementById("user_surname_position");
         surnamePositionP.innerHTML = "";
 
         // PULISCI L'INPUT TEXT
-        var userSurnameInput = document.getElementById("user_surname");
         userSurnameInput.value = "";
 
         // SBLOCCA IL DOPPIO CLICK DEL PULSANTE
