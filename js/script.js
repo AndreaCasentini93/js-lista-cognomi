@@ -5,8 +5,7 @@ var surnamesList = ["Rossi", "Ferrari", "Russo", "Bianchi", "Gallo", "Costa", "F
 surnamesList.sort();
 
 var surnamesListOl = document.getElementById("surnames_list");
-
-for (var i=0 ; i < surnamesList.length ; i++) {
+for (var i = 0 ; i < surnamesList.length ; i++) {
     surnamesListOl.innerHTML += "<li>" + surnamesList[i] + "</li>";
 }
 
@@ -22,7 +21,6 @@ function calculator() {
 
         // CHIEDI ALL'UTENTE IL SUO COGNOME
         var userSurnameInput = document.getElementById("user_surname");
-
         var userSurname = userSurnameInput.value;
         var userSurname = userSurname[0].toUpperCase() + userSurname.substring(1);
 
@@ -36,8 +34,7 @@ function calculator() {
             surnamesListOl.innerHTML += "<li>" + surnamesList[i] + "</li>";
         }
 
-        // SPECIFICA LA POSIZIONE NUMERICA DEL COGNOME UTENTE NELLA LISTA
-        var surnamePositionP = document.getElementById("user_surname_position");
+        // SPECIFICA LA POSIZIONE NUMERICA DEL COGNOME UTENTE NELLA LISTA COGNOMI
         var surnamePosition = 1;
 
         var test = true;
@@ -53,6 +50,7 @@ function calculator() {
             i++;
         }
 
+        var surnamePositionP = document.getElementById("user_surname_position");
         surnamePositionP.innerHTML = "Your surname has position number " + surnamePosition + " in the surnames list.";
 
         // PULISCI L'INPUT TEXT
@@ -62,5 +60,14 @@ function calculator() {
         doubleClick = false;
 
     }
+
+}
+
+// FUNZIONE RESET
+function reset() {
+
+    // RIMUOVI LA POSIZIONE NUMERICA DEL COGNOME UTENTE NELLA LISTA COGNOMI
+    var surnamePositionP = document.getElementById("user_surname_position");
+    surnamePositionP.innerHTML = "";
 
 }
