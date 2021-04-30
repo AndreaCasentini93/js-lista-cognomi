@@ -5,6 +5,22 @@
     margin: 0;
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 50px;
+}
+::-webkit-scrollbar-thumb {
+border-radius: 50px;
+background: #D14B78; 
+box-shadow: inset 1px 1px 5px black;
+}
+::-webkit-scrollbar-thumb:hover {
+background: #c5a4af; 
+box-shadow: inset 1px 1px 5px black;
+}
+
 body {
     font-family: 'Architects Daughter', cursive;
     font-weight: bold;
@@ -40,6 +56,7 @@ section {
 
 #section_left input {
     display: block;
+    text-align: center;
     line-height: 50px;
     width: 100%;
     padding: 5px;
@@ -54,6 +71,7 @@ section {
     cursor: pointer;
 }
 #section_left input:focus {
+    text-align: center;
     padding: 5px;
     border-radius: 5px;
     font-family: 'Architects Daughter', cursive;
@@ -101,16 +119,17 @@ section {
 }
 
 /* SECTION RIGHT */
+#section_right {
+    overflow-y: hidden;
+}
 #section_right ol {
+    height: 603px;
+    overflow-y: auto;
     width: 310px;
     padding: 10px 40px;
     border-radius: 20px;
     text-align: center;
     box-shadow: inset 0px 0px 10px #000000;
-    transition: transform .2s;
-}
-#section_right ol:hover {
-    transform: scale(1.05);
 }
 
 #section_right h1 {
