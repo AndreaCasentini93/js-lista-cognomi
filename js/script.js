@@ -68,7 +68,7 @@ function calculator() {
     } else {
 
         // MESSAGGIO DI ERRORE
-        surnamePositionP.innerHTML = "The last name entered is not valid, please try again."
+        surnamePositionP.innerHTML = "The last name entered is not valid, please try again.";
 
         // PULISCI L'INPUT TEXT
         userSurnameInput.value = "";

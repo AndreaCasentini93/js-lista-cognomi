@@ -12,10 +12,14 @@
 
     <body>
         <h1>Surnames List</h1>
-        <label for="user_surname">Enter your surname in the box, please.</label>
-        <input id="user_surname" type="text">
-        <button onclick="calculator()">Calculate</button>
-        <button onclick="reset()">Reset</button>
+        <span id="box_input">
+            <label for="user_surname">Enter your surname in the box, please.</label>
+            <input id="user_surname" type="text">
+        </span>
+        <span id="box_button">
+            <button id="calculator" onclick="calculator()">Calculate</button>
+            <button id="reset" onclick="reset()">Reset</button>
+        </span>
         <p id="user_surname_position"></p>
         <ol id="surnames_list"></ol>
 
