@@ -70,4 +70,7 @@ function reset() {
     var surnamePositionP = document.getElementById("user_surname_position");
     surnamePositionP.innerHTML = "";
 
+    // SBLOCCA IL DOPPIO CLICK DEL PULSANTE
+    doubleClick = true;
+
 }
