@@ -15,6 +15,11 @@ main {
     justify-content: space-around;
     width: 100%;
     min-height: 100vh;
+    background-image: url(../img/sfondo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-shadow: 0px 0px 7px #ffffff;
 }
 
 section {
@@ -25,6 +30,13 @@ section {
 #section_left {
     text-align: center;
 }
+
+#section_left h1 {
+    text-transform: uppercase;
+    font-size: 80px;
+    color: limegreen;
+}
+
 #section_left input {
     display: block;
     line-height: 50px;
@@ -33,8 +45,8 @@ section {
     border-radius: 30px;
     margin: 30px 0;
     font-size: 25px;
-    background-color: unset;
-    box-shadow: 0px 0px 7px #808080;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 15px #000000;
     transition: transform .5s;
     cursor: pointer;
 }
@@ -48,6 +60,7 @@ section {
 }
 
 #section_left label {
+    display: block;
     font-size: 35px;
     color: #00455c;
 }
@@ -57,7 +70,7 @@ section {
     padding: 10px 15px;
     border-radius: 30px;
     border: unset;
-    margin: 0 5px 30px 5px;
+    margin: 30px 5px 30px 5px;
     font-family: 'Architects Daughter', cursive;
     font-size: 18px;
     
@@ -80,18 +93,18 @@ section {
 }
 
 /* SECTION RIGHT */
-#section_right h1 {
-    text-transform: uppercase;
-    font-size: 40px;
-    color: limegreen;
-}
-
 #section_right ol {
+    width: 310px;
     padding: 10px 40px;
     border-radius: 20px;
     text-align: center;
     box-shadow: inset 0px 0px 10px #004a63;
+    transition: transform .2s;
 }
+#section_right ol:hover {
+    transform: scale(1.1);
+}
+
 #section_right li {
     padding: 5px;
     border-bottom: 2px solid #00bfff77;
