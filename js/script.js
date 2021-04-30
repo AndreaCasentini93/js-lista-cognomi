@@ -34,7 +34,7 @@ function calculator() {
             surnamesListOl.innerHTML += "<li>" + surnamesList[i] + "</li>";
         }
 
-        // SPECIFICA LA POSIZIONE NUMERICA DEL COGNOME UTENTE NELLA LISTA COGNOMI
+        // SPECIFICA LA POSIZIONE NUMERICA DEL COGNOME UTENTE NELLA LISTA
         var surnamePosition = 1;
 
         var test = true;
@@ -80,7 +80,7 @@ function reset() {
             surnamesListOl.innerHTML += "<li>" + surnamesList[i] + "</li>";
         }
 
-        // RIMUOVI LA POSIZIONE NUMERICA DEL COGNOME UTENTE NELLA LISTA COGNOMI
+        // RIMUOVI LA POSIZIONE NUMERICA DEL COGNOME UTENTE NELLA LISTA
         var surnamePositionP = document.getElementById("user_surname_position");
         surnamePositionP.innerHTML = "";
 
