@@ -1,30 +1,36 @@
-// 1. ask the user for their surname
+// USER SURNAME REQUEST
 var userSurname = prompt("Write your surname, please.");
 
-// 2. insert it in an array with other surnames: 'Bianchi', 'Neri', 'Rossi', 'Verdi', 'Gialli'
-var surnameList = ["Bianchi", "Neri", "Rossi", "Verdi", "Gialli"];
+// USER SURNAME IN [SURNAMES LIST] ARRAY
+var surnamesList = ["Bianchi", "Neri", "Rossi", "Verdi", "Gialli"];
 
-surnameList.push(userSurname);
+surnamesList.push(userSurname);
 
-// 3. print the list sorted alphabetically
-surnameList.sort();
+// PRINT OF THE ORDERED [SURNAMES LIST]
+surnamesList.sort();
 
-var surnameListUl = document.getElementById("surname_list");
+var surnamesListUl = document.getElementById("surnames_list");
 
-for (var i=0 ; i < surnameList.length ; i++) {
-    surnameListUl.innerHTML += "<li>" + surnameList[i] + "</li>";
+for (var i=0 ; i < surnamesList.length ; i++) {
+    surnamesListUl.innerHTML += "<li>" + surnamesList[i] + "</li>";
 }
 
-// 4. scrivi anche la posizione "umana" (partendo da 1) della lista in cui il nuovo utente si trova
+// USER'S SURNAME POSITION IN THE [SURNAMES LIST]
 
 var surnamePositionP = document.getElementById("user_surname_position");
-var surnamePosition = 0;
+var surnamePosition = 1;
 
 var test = true;
 
 i = 0
-while ((i < surnameList.length) && (test == false)) {
+while ((i < surnamesList.length) && (test)) {
     
+    if (userSurname == surnamesList[i]) {
+        surnamePosition += i;
+        test = false;
+    }
 
     i++;
 }
+
+surnamePositionP.innerHTML = "Your surname has position number " + surnamePosition + " in the surnames list";
