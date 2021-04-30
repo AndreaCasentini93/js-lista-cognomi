@@ -2,7 +2,7 @@
 var userSurname = prompt("Write your surname, please.");
 
 // USER SURNAME IN [SURNAMES LIST] ARRAY
-var surnamesList = ["Bianchi", "Neri", "Rossi", "Verdi", "Gialli"];
+var surnamesList = ["White", "Black", "Red", "Green", "Yellow", "Orange", "Violet", "Brown", "Purple", "Pink"];
 
 surnamesList.push(userSurname);
 
