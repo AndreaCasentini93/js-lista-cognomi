@@ -4,6 +4,11 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- FONT GOOGLE -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+        <!-- FONT AWESOME -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
         <!-- STYLE CSS -->
         <link rel="stylesheet" href="css/style.css">
         <!-- TITLE -->
@@ -11,17 +16,28 @@
     </head>
 
     <body>
-        <h1>Surnames List</h1>
-        <span id="box_input">
-            <label for="user_surname">Enter your surname in the box, please.</label>
-            <input id="user_surname" type="text">
-        </span>
-        <span id="box_button">
-            <button id="calculator" onclick="calculator()">Calculate</button>
-            <button id="reset" onclick="reset()">Reset</button>
-        </span>
-        <p id="user_surname_position"></p>
-        <ol id="surnames_list"></ol>
+        <main>
+            <!-- SECTION LEFT -->
+            <section id="section_left">
+                <span id="box_input">
+                    <label for="user_surname">Enter your surname in the box, please.</label>
+                    <input id="user_surname" type="text">
+                </span>
+                <span id="box_button">
+                    <button id="calculator" onclick="calculator()">Calculate</button>
+                    <button id="reset" onclick="reset()">Reset</button>
+                </span>
+                <p id="user_surname_position"></p>
+            </section>
+            <!-- /SECTION LEFT --> 
+
+            <!-- SECTION RIGHT -->
+            <section id="section_right">
+                <h1>Surnames List</h1>
+                <ol id="surnames_list"></ol>
+            </section> 
+            <!-- /SECTION RIGHT -->
+        </main>
 
         <!-- SCRIPT JS -->
         <script src="js/script.js"></script>

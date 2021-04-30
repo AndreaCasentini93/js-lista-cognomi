@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Architects Daughter', cursive;
+    font-weight: bold;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    min-height: 100vh;
+    padding: 50px;
+    background-image: linear-gradient(#59d6ff, #ffffff,#59d6ff);
+}
+
+section {
+    margin: auto;
+}
+
+/* SECTION LEFT */
+#section_left {
+    text-align: center;
+}
+#section_left input {
+    display: block;
+    line-height: 50px;
+    width: 100%;
+    border: unset;
+    border-radius: 30px;
+    margin: 30px 0;
+    font-size: 25px;
+    background-color: unset;
+    box-shadow: 0px 0px 7px #808080;
+    transition: transform .5s;
+    cursor: pointer;
+}
+#section_left input:focus {
+    padding: 5px;
+    border-radius: 5px;
+    font-family: 'Architects Daughter', cursive;
+    color: #00bfff;
+    transform: scale(1.1);
+    cursor: unset;
+}
+
+#section_left label {
+    font-size: 35px;
+    color: #00455c;
+}
+
+#section_left button {
+    text-transform: uppercase;
+    padding: 10px 15px;
+    border-radius: 30px;
+    border: unset;
+    margin: 0 5px 30px 5px;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 18px;
+    
+    color: #ffffff;
+    background-color: #00bfff;
+    box-shadow: inset 0px 0px 10px #004a63;
+    transition: transform .2s;
+    cursor: pointer;
+}
+#section_left button:hover {
+    transform: scale(1.1);
+}
+
+#section_left p {
+    font-size: 25px;
+    color: #ff4500;
+}
+#section_left #message {
+    color: #00bfff;
+}
+
+/* SECTION RIGHT */

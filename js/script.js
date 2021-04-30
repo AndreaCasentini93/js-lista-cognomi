@@ -57,7 +57,7 @@ function calculator() {
             i++;
         }
 
-        surnamePositionP.innerHTML = "Your surname has position number " + surnamePosition + " in the surnames list.";
+        surnamePositionP.innerHTML = "<span id=\"message\">" + "Your surname has position number " + surnamePosition + " in the surnames list." + "</span>";
         
         // PULISCI L'INPUT TEXT
         userSurnameInput.value = "";
