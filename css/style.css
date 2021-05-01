@@ -119,6 +119,10 @@ section {
 }
 
 /* SECTION RIGHT */
+#section_right {
+    overflow-x: hidden;
+}
+
 #section_right ol {
     height: 450px;
     overflow-y: auto;
