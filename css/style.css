@@ -119,12 +119,10 @@ section {
 }
 
 /* SECTION RIGHT */
-#section_right {
-    overflow-y: hidden;
-}
 #section_right ol {
-    height: 603px;
+    height: 450px;
     overflow-y: auto;
+    overflow-x: hidden;
     width: 310px;
     padding: 10px 40px;
     border-radius: 20px;
